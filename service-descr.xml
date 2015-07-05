@@ -1,0 +1,25 @@
+<node name = "/org/ssdev/example/control">
+	<interface name = "org.ssdev.taskcontrol">
+		<method name ="start">
+        	<arg name ="taskName" type="s" direction="in"/>
+        	<arg name ="taskid" type="i" direction="out"/>
+        </method>
+        <method name ="stop">
+        	<arg name ="taskid" type="i" direction="in"/>
+            <arg name ="status" type="s" direction="out"/>
+        </method>
+        <method name ="getStatus">
+            <arg name ="taskName" type="s" direction="in"/>
+        	<arg name = "status" type ="s" direction = "out"/>
+        </method>
+        <signal name = "terminated">
+        	<arg name = "taskid" type="i"/>
+        </signal>
+        <property name = "notify" type ="y" access ="readwrite"/>
+	</interface>
+	<interface name = "org.ssdev.objectcontrol">
+		<method name ="shutdown">
+			<arg name ="status" type="s" direction="out"/>
+		</method>
+	</interface>
+</node>
